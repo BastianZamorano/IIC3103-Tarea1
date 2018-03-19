@@ -1,0 +1,29 @@
+ <div class="container" style="margin:0 auto;">
+   <h1>Noticias en vivo</h1>
+ <div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-4 top-space">
+      <div class="box relative post-height">
+        <div class="absolute post-height">
+           <p><small>Publicada el <%= post.created_at %></small></p>
+         <h2><%= link_to post.title, post %></h2>
+        <p><%= post.subtitle %></p>
+        <hr>
+        <p><%= truncate(post.body, length: 500) %></p> 
+        <div class="letra">
+        <p><small><%= post.comments.count %> comments</small></p> 
+      </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="top-space text-center">
+<%= will_paginate @posts %>
+</div>
+</div>
+
+
+
+
+

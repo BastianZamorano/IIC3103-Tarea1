@@ -1,0 +1,32 @@
+<% unless @post.user.nil? %>
+<div class="top space letra">
+	<p><small>
+		Escrito por: <%= @post.user.email %>
+	</p></small>
+	<p><small>
+		Publicada el: <%= @post.created_at %>
+	</p></small>
+</div>
+<%end%>
+<h1><%= @post.title %></h1>
+<div>
+	<p><%= @post.subtitle %></p>
+</div>
+<div>
+	<p><%= @post.body %></p>
+</div>
+<div class="field">
+	<h3>Comentarios</h3>
+	<%= render "comments/form" %>
+	<ul>
+		<% @post.comments.each do |comment| %>
+		<li>
+			<%= comment.body %> - <%= comment.nombre %> 
+		</li>
+		<%end%>
+	</ul>
+</div>
+
+
+
+

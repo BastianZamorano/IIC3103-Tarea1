@@ -1,0 +1,20 @@
+<%= form_for (@post) do |f| %>
+	<% @post.errors.full_messages.each do |message| %>
+		<div class="be-red white top-space">
+		* <%= message %>
+		</div>
+	<%end%>
+	 <div class="field">
+ 	<%= f.text_field :title, placeholder: "Titulo de la noticia", class:"form-control" %>
+ 	</div>
+ 	<div class="field">
+ 	 <%= f.text_area :subtitle, placeholder: "Bajada de la noticia", style:"height:100px;", class:"form-control" %>
+ 	</div>
+	<div class="field">
+ 	 <%= f.text_area :body, placeholder: "Cuerpo de la noticia", style:"height:250px;", class: "form-control" %>
+ 	</div> 
+ 	<div class="field">
+ 		<%= f.submit "GUARDAR", class: "btn be-red white" %>
+ 	</div>
+
+<%end%>

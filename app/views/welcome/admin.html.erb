@@ -1,0 +1,22 @@
+  <% @admin.each do |post| %>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="post">
+        <p><small>Publicada el <%= post.created_at %></small></p>
+        <h2><%= link_to post.title, post %></h2> - <%= link_to "Eliminar", post, method: :delete, data: {confirm: 'Estas seguro que deseas eliminar este artículo?'}%> </h2> - <%= link_to "Editar", edit_post_path(post) %>
+        <!-- <p><%= post.subtitle %></p>
+        <hr>
+        <p><%= post.body %></p> -->
+      </div>
+    </div>
+  <% end %>
+
+  <div class="top-space text-center">
+          <%= will_paginate @admin %>
+      </div>
+
+<div class="row">
+<div class="col-xs-12">
+    <hr>
+    <%= link_to 'Nuevo Post', new_post_path, class: "btn be-red white" %>
+  </div>
+</div>

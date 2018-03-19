@@ -1,0 +1,28 @@
+ 	<header>
+  		<nav class="be-red white large-padding">
+  			<ul class="no-list row center-xs">
+  				<li class="col-md">
+  					<h1 class="no-margin" id="logo"> <%= link_to "Noticias Bastian", root_path %> </h1>
+  				</li>	
+
+          <li class="col-md">
+            <%= link_to "Noticias", posts_path %>
+          </li>
+
+          <li class="col-md">
+            <%= link_to "Admin", admin_path %>
+          </li>
+
+
+          <% if user_signed_in? %>
+          <li class="col-md">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
+          </li>
+           <% else %>
+           <li class="col-md">
+            <%= link_to "Iniciar sesión", new_user_session_path%>
+          <% end %>
+  				
+  			</ul>
+  		</nav>
+  	</header>
