@@ -2,9 +2,7 @@
    <h1>Noticias en vivo</h1>
  <div class="row">
   <% @posts.each do |post| %>
-    <div class="col-md-4 top-space">
-      <div class="box relative post-height">
-        <div class="absolute post-height">
+    <div class="col-md-4 col-sm-6 col-xs-12 top-space">
            <p><small>Publicada el <%= post.created_at %></small></p>
          <h2><%= link_to post.title, post %></h2>
         <p><%= post.subtitle %></p>
@@ -12,16 +10,16 @@
         <p><%= truncate(post.body, length: 500) %></p> 
         <div class="letra">
         <p><small><%= post.comments.count %> comments</small></p> 
-      </div>
-      </div>
     </div>
   </div>
   <% end %>
 </div>
-<div class="top-space text-center">
+</div>
+<div class="top-space text-center pagination">
+  <hr>
 <%= will_paginate @posts %>
 </div>
-</div>
+
 
 
 

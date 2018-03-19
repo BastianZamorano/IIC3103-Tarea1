@@ -31,6 +31,10 @@ a,a:visited{
 .no-margin{
 	margin: 0px;
 }
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .be-red{
 	background-color: rgb(135,206,250)
@@ -70,4 +74,11 @@ a,a:visited{
 	display: block;
 	padding: 10px 0px;
 	font-size: 1.2em;
+}
+
+.box {
+    width: 300px;
+    border: 20px blue;
+    padding: 100px;
+    margin: 25px;
 }
