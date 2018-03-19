@@ -74,7 +74,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only allow the white list through
     def comment_params
       params.require(:comment).permit(:nombre, :post_id, :body)
     end
